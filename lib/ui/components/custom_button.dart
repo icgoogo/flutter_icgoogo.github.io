@@ -4,14 +4,19 @@ class CustomButton extends StatelessWidget {
   final Color bgColor;
   final Text title;
   final Function() onTap;
-  const CustomButton({required this.bgColor, required this.title, required this.onTap, Key? key}) : super(key: key);
+  const CustomButton({
+    required this.bgColor,
+    required this.title,
+    required this.onTap,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 80),
-        constraints: BoxConstraints(
+        constraints: const BoxConstraints(
           maxWidth: 400,
         ),
         decoration: const BoxDecoration(

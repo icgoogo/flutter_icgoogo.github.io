@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:icgoogo/const/images_path.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'components/bottom_game.dart';
 import 'components/custom_button.dart';
+import 'components/grid_projects.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -16,6 +16,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class MainScreenState extends State<MainScreen> {
+  bool isProjectsOpened = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,15 +66,24 @@ class MainScreenState extends State<MainScreen> {
             const SizedBox(
               height: 50.0,
             ),
+            isProjectsOpened ? const GridProjects() : const SizedBox(),
+            const SizedBox(
+              height: 16,
+            ),
             CustomButton(
-                bgColor: Colors.lightGreen,
-                title: Text(
-                  "Projects",
-                  style: Theme.of(context).textTheme.bodyText2?.apply(
-                        color: Colors.white,
-                      ),
-                ),
-                onTap: () {}),
+              bgColor: Colors.lightGreen,
+              title: Text(
+                "Projects",
+                style: Theme.of(context).textTheme.bodyText2?.apply(
+                      color: Colors.white,
+                    ),
+              ),
+              onTap: () {
+                setState(() {
+                  isProjectsOpened = !isProjectsOpened;
+                });
+              },
+            ),
             const SizedBox(
               height: 60.0,
             ),

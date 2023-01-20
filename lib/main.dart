@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'icgoogo',
       initialRoute: '/',
+      debugShowCheckedModeBanner: false,
       routes: {
         //  '/': (context) => const MainScreen(),
         '/projects': (context) => const ProjectsScreen(),

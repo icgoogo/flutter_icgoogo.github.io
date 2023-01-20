@@ -9,7 +9,7 @@
 .history
 .svn/
 migrate_working_dir/
-pubspec.loc
+pubspec.lock
 
 # IntelliJ related
 *.iml
