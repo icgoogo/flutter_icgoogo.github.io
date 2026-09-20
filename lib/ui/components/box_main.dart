@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class BoxMain extends StatelessWidget {
   const BoxMain({
-    Key? key,
+    super.key,
     required this.playerX,
     required this.playerY,
-  }) : super(key: key);
+  });
 
   final double playerX;
   final double playerY;

@@ -4,8 +4,7 @@ class BottomButton extends StatelessWidget {
   final IconData icon;
   final Function() onPressed;
 
-  const BottomButton({required this.icon, required this.onPressed, Key? key})
-      : super(key: key);
+  const BottomButton({required this.icon, required this.onPressed, super.key});
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

@@ -7,7 +7,7 @@ import 'package:icgoogo/ui/components/bottom_button.dart';
 import 'box_main.dart';
 
 class BottomGame extends StatefulWidget {
-  const BottomGame({Key? key}) : super(key: key);
+  const BottomGame({super.key});
 
   @override
   BottomGameState createState() => BottomGameState();
@@ -60,15 +60,20 @@ class BottomGameState extends State<BottomGame> {
 
   @override
   Widget build(BuildContext context) {
-    return RawKeyboardListener(
+    return KeyboardListener(
       focusNode: FocusNode(),
       autofocus: true,
-      onKey: (event) {
-        if (event.isKeyPressed(LogicalKeyboardKey.arrowLeft)) {
+      onKeyEvent: (event) {
+        if (HardwareKeyboard.instance
+            .isLogicalKeyPressed(LogicalKeyboardKey.arrowLeft)) {
           moveLeft();
-        } else if (event.isKeyPressed(LogicalKeyboardKey.arrowRight)) {
+        } else if (HardwareKeyboard.instance
+            .isLogicalKeyPressed(LogicalKeyboardKey.arrowRight)) {
           moveRight();
-        } else if (event.isKeyPressed(LogicalKeyboardKey.space)) {
+        } else if (HardwareKeyboard.instance
+                .isLogicalKeyPressed(LogicalKeyboardKey.space) ||
+            HardwareKeyboard.instance
+                .isLogicalKeyPressed(LogicalKeyboardKey.arrowUp)) {
           jump();
         }
       },
