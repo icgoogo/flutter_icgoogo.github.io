@@ -17,6 +17,7 @@ class MainScreen extends StatefulWidget {
 
 class MainScreenState extends State<MainScreen> {
   bool isProjectsOpened = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +47,7 @@ class MainScreenState extends State<MainScreen> {
             Text(
               "Hello There",
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline6?.apply(
+              style: Theme.of(context).textTheme.titleLarge?.apply(
                     color: Colors.white,
                   ),
             ),
@@ -58,7 +59,7 @@ class MainScreenState extends State<MainScreen> {
               child: Text(
                 "I'm Hammad, any inquiries? email me through \n\nhammadsyr@gmail.com",
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyText1?.apply(
+                style: Theme.of(context).textTheme.bodyLarge?.apply(
                       color: Colors.white,
                     ),
               ),
@@ -66,54 +67,71 @@ class MainScreenState extends State<MainScreen> {
             const SizedBox(
               height: 50.0,
             ),
-            isProjectsOpened ? const GridProjects() : const SizedBox(),
-            const SizedBox(
-              height: 16,
-            ),
-            CustomButton(
-              bgColor: Colors.lightGreen,
-              title: Text(
-                "Projects",
-                style: Theme.of(context).textTheme.bodyText2?.apply(
-                      color: Colors.white,
-                    ),
+            // Show Projects Grid or standard social navigation buttons
+            if (isProjectsOpened) ...[
+              CustomButton(
+                bgColor: Colors.redAccent,
+                title: Text(
+                  "Home",
+                  style: Theme.of(context).textTheme.bodyMedium?.apply(
+                        color: Colors.white,
+                      ),
+                ),
+                onTap: () {
+                  setState(() {
+                    isProjectsOpened = false;
+                  });
+                },
               ),
-              onTap: () {
-                setState(() {
-                  isProjectsOpened = !isProjectsOpened;
-                });
-              },
-            ),
-            const SizedBox(
-              height: 60.0,
-            ),
-            CustomButton(
-              bgColor: Colors.deepOrange,
-              title: Text(
-                "Stack Overflow",
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyText2?.apply(
-                      color: Colors.white,
-                    ),
+              const SizedBox(
+                height: 30.0,
               ),
-              onTap: () async {
-                Uri url = Uri.parse(
-                    "https://stackoverflow.com/users/10898364/hammadsyr");
-                if (await canLaunchUrl(url)) {
-                  await launchUrl(url);
-                } else {
-                  throw "could not launch $url";
-                }
-              },
-            ),
-            const SizedBox(
-              height: 60.0,
-            ),
-            CustomButton(
+              const GridProjects(),
+            ] else ...[
+              CustomButton(
+                bgColor: Colors.lightGreen,
+                title: Text(
+                  "Projects/Portfolio",
+                  style: Theme.of(context).textTheme.bodyMedium?.apply(
+                        color: Colors.white,
+                      ),
+                ),
+                onTap: () {
+                  setState(() {
+                    isProjectsOpened = true;
+                  });
+                },
+              ),
+              const SizedBox(
+                height: 60.0,
+              ),
+              CustomButton(
+                bgColor: Colors.deepOrange,
+                title: Text(
+                  "Stack Overflow",
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.bodyMedium?.apply(
+                        color: Colors.white,
+                      ),
+                ),
+                onTap: () async {
+                  Uri url = Uri.parse(
+                      "https://stackoverflow.com/users/10898364/hammadsyr");
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url);
+                  } else {
+                    throw "could not launch $url";
+                  }
+                },
+              ),
+              const SizedBox(
+                height: 60.0,
+              ),
+              CustomButton(
                 bgColor: Colors.blueAccent,
                 title: Text(
                   "Linkedin",
-                  style: Theme.of(context).textTheme.bodyText2?.apply(
+                  style: Theme.of(context).textTheme.bodyMedium?.apply(
                         color: Colors.white,
                       ),
                 ),
@@ -125,27 +143,29 @@ class MainScreenState extends State<MainScreen> {
                   } else {
                     throw "could not launch $url";
                   }
-                }),
-            const SizedBox(
-              height: 60.0,
-            ),
-            CustomButton(
-              bgColor: Colors.black,
-              title: Text(
-                "Github",
-                style: Theme.of(context).textTheme.bodyText2?.apply(
-                      color: Colors.white,
-                    ),
+                },
               ),
-              onTap: () async {
-                Uri url = Uri.parse("https://github.com/icgoogo");
-                if (await canLaunchUrl(url)) {
-                  await launchUrl(url);
-                } else {
-                  throw "could not launch $url";
-                }
-              },
-            ),
+              const SizedBox(
+                height: 60.0,
+              ),
+              CustomButton(
+                bgColor: Colors.black,
+                title: Text(
+                  "Github",
+                  style: Theme.of(context).textTheme.bodyMedium?.apply(
+                        color: Colors.white,
+                      ),
+                ),
+                onTap: () async {
+                  Uri url = Uri.parse("https://github.com/icgoogo");
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url);
+                  } else {
+                    throw "could not launch $url";
+                  }
+                },
+              ),
+            ],
             const SizedBox(
               height: 30.0,
             ),

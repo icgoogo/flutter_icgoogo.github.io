@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:icgoogo/ui/main_screen.dart';
 import 'package:icgoogo/ui/middle_screen/projects_screen.dart';
@@ -21,9 +22,11 @@ class MyApp extends StatelessWidget {
         '/projects': (context) => const ProjectsScreen(),
       },
       theme: ThemeData(
-        pageTransitionsTheme: const PageTransitionsTheme(builders: {
-          TargetPlatform.fuchsia: CupertinoPageTransitionsBuilder(),
-        }),
+        pageTransitionsTheme: PageTransitionsTheme(
+          builders: {
+            TargetPlatform.fuchsia: CupertinoPageTransitionsBuilder(),
+          },
+        ),
         primarySwatch: Colors.blue,
         fontFamily: "PressStart2P",
       ),
