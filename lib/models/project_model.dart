@@ -28,7 +28,7 @@ List<Project> projects = [
   ),
   const Project(
     title: "Throughput Prediction for 5G High Density Network",
-    mdPath: networkLiverpoolMd,
+    tapLink: networkLiverpoolLink,
   ),
   const Project(
     title: "CTF Challenges",

@@ -18,7 +18,6 @@ const String pokedexNextJsGif = "${videoPath}pokedex-nextjs.gif";
 
 const String ceriaMd = "${mdPath}bri_ceria.md";
 const String ebpfMd = "${mdPath}ebpf_tracker.md";
-const String networkLiverpoolMd = "${mdPath}network_liverpool.md";
 const String ctfMd = "${mdPath}ctf_challenges.md";
 
 const String storeCeria =
@@ -31,3 +30,5 @@ const String cocoroLink =
 const String stackOverflowLink =
     "https://stackoverflow.com/users/10898364/hammadsyr";
 const String linkedinLink = "https://www.linkedin.com/in/hammad-syarif/";
+const String networkLiverpoolLink =
+    "https://github.com/icgoogo/throughput_prediction_for_5G_high_density_network";
