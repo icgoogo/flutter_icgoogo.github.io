@@ -9,9 +9,12 @@
 
 ## 📌 Project Overview
 
+_Part of Network Data Analysis course exam_<br>
+
 Predicting user throughput in dense 5G network environments (such as stadiums or event arenas) is critical for dynamic radio resource management, quality-of-service (QoS) guarantees, and network slice allocation. However, wireless telemetry data is heavily skewed, highly dynamic, and fragmented across different operational entities—specifically the **User Equipment (UE)** side and the **Radio Unit (RU)** side.
 
-This repository presents an end-to-end machine learning framework that compares **Centralized Machine Learning** against **Simulated Vertical Federated Learning (VFL)** for user-level throughput prediction in the **ACC Arena** dense 5G deployment.
+This repository presents an end-to-end machine learning framework that compares **Centralized Machine Learning** against **Simulated Vertical Federated Learning (VFL)** for user-level throughput prediction in the **ACC Arena** dense 5G deployment.<br>
+Github repo: [Throughput Prediction](https://github.com/icgoogo/throughput_prediction_for_5G_high_density_network)
 
 ### 🎯 Key Question
 
@@ -192,25 +195,6 @@ All models were evaluated on the aligned held-out test set of 2,000 unseen users
 │   └── metrics.py           # Two-stage evaluation metrics (Log & Raw)
 ├── README.md                # Project documentation
 └── requirements.txt         # Dependencies
-```
-
----
-
-## 📖 Citation & References
-
-If you use this repository or build upon this work, please cite the underlying dataset and project:
-
-```bibtex
-@article{maheshwari20255g,
-  title={5G High Density Demand Dataset in Liverpool City Region, UK},
-  author={Maheshwari, Mukesh Kumar and Raschell{\`a}, Alessandro and Mackay, Michael and Eiza, Max Hashem and Wetherall, Jon and others},
-  journal={Scientific Data},
-  volume={12},
-  pages={1992},
-  year={2025},
-  publisher={Nature Publishing Group},
-  doi={10.1038/s41597-025-06282-0}
-}
 ```
 
 ---
