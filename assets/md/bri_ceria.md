@@ -12,4 +12,4 @@ Contributed to the engineering and maintenance of BRI Ceria, a digital lending p
 
 #### Tools Used
 
-Flutter, Java, Kotlin, Swift, Go, JS, TS, Burp Suite, Frida, JADX, ADB, Certificate Maintenance (ex: SSL Pinning, APNs, etc), Playstore, AppStore, Docker, Jenkins, SSH, SonarQube, JIRA, Confluence, Figma, etc
+Vim, Flutter, Java, Kotlin, Swift, Go, JS, TS, Burp Suite, Frida, JADX, ADB, Certificate Maintenance (ex: SSL Pinning, APNs, etc), Playstore, AppStore, Docker, Jenkins, SSH, SonarQube, JIRA, Confluence, Figma, etc

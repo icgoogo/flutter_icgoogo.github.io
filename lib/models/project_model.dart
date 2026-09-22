@@ -23,8 +23,8 @@ List<Project> projects = [
     prevPath: ceriaGif,
   ),
   const Project(
-    title: "Kernel-Level TCP FSM with eBPF with C",
-    mdPath: ebpfMd,
+    title: "Kernel-Level Connection Tracking with eBPF in C",
+    tapLink: ebpfLink,
   ),
   const Project(
     title: "Throughput Prediction for 5G High Density Network",
@@ -35,12 +35,12 @@ List<Project> projects = [
     mdPath: ctfMd,
   ),
   const Project(
-    title: "Programmable Data Plane with P4 and eBPF",
-    mdPath: ebpfMd,
+    title: "Programmable Data Plane with P4 and eBPF Lab",
+    tapLink: ncLabLink,
   ),
   const Project(
     title: "Linux Kernel Module Development",
-    mdPath: ctfMd,
+    tapLink: osLabLink,
   ),
   const Project(
     title: "Network Data Analysis Notebook",
@@ -48,7 +48,7 @@ List<Project> projects = [
   ),
   const Project(
     title: "Network Measurement Notebook",
-    mdPath: ctfMd,
+    mdPath: nmMd,
   ),
   const Project(
     title: "Image Classifier with Mask using Transfer Learning",

@@ -17,8 +17,8 @@ const String ceriaGif = "${videoPath}ceria.gif";
 const String pokedexNextJsGif = "${videoPath}pokedex-nextjs.gif";
 
 const String ceriaMd = "${mdPath}bri_ceria.md";
-const String ebpfMd = "${mdPath}ebpf_tracker.md";
 const String ctfMd = "${mdPath}ctf_challenges.md";
+const String nmMd = "${mdPath}network_measurement.md";
 
 const String storeCeria =
     "https://play.google.com/store/apps/details?id=id.co.bri.ceria";
@@ -32,3 +32,7 @@ const String stackOverflowLink =
 const String linkedinLink = "https://www.linkedin.com/in/hammad-syarif/";
 const String networkLiverpoolLink =
     "https://github.com/icgoogo/throughput_prediction_for_5G_high_density_network";
+const String ebpfLink = "https://github.com/icgoogo/ebpf_tcp_tracker";
+const String ncLabLink =
+    "https://github.com/icgoogo/058172-network-computing-labs";
+const String osLabLink = "https://github.com/icgoogo/course-labs-2526";
