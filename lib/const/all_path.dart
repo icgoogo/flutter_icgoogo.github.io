@@ -19,6 +19,9 @@ const String pokedexNextJsGif = "${videoPath}pokedex-nextjs.gif";
 const String ceriaMd = "${mdPath}bri_ceria.md";
 const String ctfMd = "${mdPath}ctf_challenges.md";
 const String nmMd = "${mdPath}network_measurement.md";
+const String ndMd = "${mdPath}network_da.md";
+const String painClsMd = "${mdPath}pirate_pain_cls.md";
+const String imgClsMd = "${mdPath}img_cls.md";
 
 const String storeCeria =
     "https://play.google.com/store/apps/details?id=id.co.bri.ceria";

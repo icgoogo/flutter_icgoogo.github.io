@@ -31,7 +31,7 @@ Several challenges solved is available here: [Github Repo](https://github.com/ic
 
 ---
 
-## Toolss
+## Tools
 
 - **Binary Exploitation:** Pwntools, GDB (GEF/Pwndbg), C, x86/x86-64 Assembly, Linux Kernel/Syscalls
 - **Reverse Engineering:** Ghidra, IDA Free, `libdebug`, `objdump`, `strings`, `file`

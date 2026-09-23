@@ -44,7 +44,7 @@ List<Project> projects = [
   ),
   const Project(
     title: "Network Data Analysis Notebook",
-    mdPath: ctfMd,
+    mdPath: ndMd,
   ),
   const Project(
     title: "Network Measurement Notebook",
@@ -52,12 +52,12 @@ List<Project> projects = [
   ),
   const Project(
     title: "Image Classifier with Mask using Transfer Learning",
-    mdPath: ctfMd,
+    mdPath: imgClsMd,
     prevPath: imageClassifier,
   ),
   const Project(
     title: "Pain Level Classifier with Temporal Data",
-    mdPath: ctfMd,
+    mdPath: painClsMd,
     prevPath: painClassifier,
   ),
   const Project(
