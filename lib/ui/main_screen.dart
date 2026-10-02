@@ -75,38 +75,32 @@ class MainScreenState extends State<MainScreen> {
     return Column(
       key: const ValueKey('homeView'),
       children: [
-        if (portfolio == null && portfolioError == null)
-          const CircularProgressIndicator(color: Colors.tealAccent)
-        else if (portfolioError != null)
-          Text('Unable to load portfolio: $portfolioError',
-              style: const TextStyle(color: Colors.redAccent))
-        else
-          ...tabs.asMap().entries.map((entry) {
-            final index = entry.key;
-            final tab = entry.value;
-            final color = Colors.primaries[index % Colors.primaries.length];
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 60.0),
-              child: CustomButton(
-                bgColor: color,
-                title: Text(tab.title,
-                    style: const TextStyle(color: Colors.white)),
-                onTap: () {
-                  if (tab.title.toLowerCase() == 'projects') {
-                    _showProjects();
-                  } else if (tab.title.toLowerCase() == 'resume' &&
-                      portfolio?.cv != null) {
-                    setState(() {
-                      isResumeOpened = true;
-                      isProjectsOpened = false;
-                    });
-                  } else if (tab.link != null) {
-                    _launchExternalUrl(tab.link!);
-                  }
-                },
-              ),
-            );
-          }),
+        ...tabs.asMap().entries.map((entry) {
+          final index = entry.key;
+          final tab = entry.value;
+          final color = Colors.primaries[index % Colors.primaries.length];
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 60.0),
+            child: CustomButton(
+              bgColor: color,
+              title:
+                  Text(tab.title, style: const TextStyle(color: Colors.white)),
+              onTap: () {
+                if (tab.title.toLowerCase() == 'projects') {
+                  _showProjects();
+                } else if (tab.title.toLowerCase() == 'resume' &&
+                    portfolio?.cv != null) {
+                  setState(() {
+                    isResumeOpened = true;
+                    isProjectsOpened = false;
+                  });
+                } else if (tab.link != null) {
+                  _launchExternalUrl(tab.link!);
+                }
+              },
+            ),
+          );
+        }),
       ],
     );
   }
@@ -249,6 +243,7 @@ class MainScreenState extends State<MainScreen> {
     final ImageProvider<Object>? avatarImage = portfolio?.mainPreviewUrl == null
         ? null
         : NetworkImage(portfolio!.mainPreviewUrl!);
+
     final currentView = isResumeOpened
         ? _buildResumeView(context)
         : selectedProject != null
@@ -257,170 +252,163 @@ class MainScreenState extends State<MainScreen> {
                 ? _buildProjectsView(context)
                 : _buildHomeView(context);
 
-    return Scaffold(
-      body: Container(
-        color: Colors.blueGrey,
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            return SingleChildScrollView(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  minHeight: constraints
-                      .maxHeight, // Forces column to at least screen height
-                ),
-                child: IntrinsicHeight(
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 50.0),
-                      Center(
-                        child: Stack(
-                          clipBehavior: Clip.none,
-                          children: [
-                            Container(
-                              width: 190.0,
-                              height: 210.0,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFF1E293B),
-                                borderRadius: BorderRadius.circular(18.0),
-                                border: Border.all(
-                                  color: Colors.tealAccent,
-                                  width: 3.5,
-                                ),
-                                boxShadow: const [
-                                  BoxShadow(
-                                    color: Colors.black87,
-                                    offset: Offset(8, 8),
-                                    blurRadius: 0,
-                                  ),
-                                ],
-                              ),
-                              padding: const EdgeInsets.all(4.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(12.0),
-                                child: avatarImage == null
-                                    ? Container(
-                                        color: Colors.blueGrey[800],
-                                        alignment: Alignment.center,
-                                        child: const Icon(
-                                          Icons.person,
-                                          size: 72,
-                                          color: Colors.white54,
-                                        ),
-                                      )
-                                    : Image(
-                                        image: avatarImage,
-                                        fit: BoxFit.cover,
-                                        errorBuilder:
-                                            (context, error, stackTrace) {
-                                          return Container(
-                                            color: Colors.blueGrey[800],
-                                            alignment: Alignment.center,
-                                            child: const Icon(
-                                              Icons.person,
-                                              size: 72,
-                                              color: Colors.white54,
-                                            ),
-                                          );
-                                        },
-                                      ),
-                              ),
-                            ),
-                            Positioned(
-                              top: -12,
-                              left: 16,
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 10,
-                                  vertical: 4,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: Colors.redAccent,
-                                  borderRadius: BorderRadius.circular(6),
-                                  border: Border.all(
-                                    color: Colors.white,
-                                    width: 2,
-                                  ),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                      color: Colors.black54,
-                                      offset: Offset(2, 2),
-                                      blurRadius: 0,
-                                    ),
-                                  ],
-                                ),
-                                child: const Text(
-                                  '@!*#JAK)@HEHE',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w900,
-                                    letterSpacing: 1.2,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+    late final Widget waitingWidget;
+    if (portfolio == null && portfolioError == null) {
+      waitingWidget = CircularProgressIndicator(color: Colors.tealAccent);
+    } else if (portfolioError != null) {
+      waitingWidget = Text('Unable to load portfolio: $portfolioError',
+          style: const TextStyle(color: Colors.redAccent));
+    } else {
+      waitingWidget = SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(height: 50.0),
+            Center(
+              child: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Container(
+                    width: 190.0,
+                    height: 210.0,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF1E293B),
+                      borderRadius: BorderRadius.circular(18.0),
+                      border: Border.all(
+                        color: Colors.tealAccent,
+                        width: 3.5,
+                      ),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black87,
+                          offset: Offset(8, 8),
+                          blurRadius: 0,
                         ),
-                      ),
-                      const SizedBox(height: 30.0),
-                      Text(
-                        "Hello There",
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.titleLarge?.apply(
-                              color: Colors.white,
-                            ),
-                      ),
-                      const SizedBox(height: 10.0),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 50.0),
-                        child: Text(
-                          "I'm Hammad, any inquiries? email me through \n\nhammadsyr@gmail.com",
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.bodyLarge?.apply(
-                                color: Colors.white,
+                      ],
+                    ),
+                    padding: const EdgeInsets.all(4.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(12.0),
+                      child: avatarImage == null
+                          ? Container(
+                              color: Colors.blueGrey[800],
+                              alignment: Alignment.center,
+                              child: const Icon(
+                                Icons.person,
+                                size: 72,
+                                color: Colors.white54,
                               ),
-                        ),
-                      ),
-                      const SizedBox(height: 50.0),
-                      AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 450),
-                        switchInCurve: Curves.easeOutCubic,
-                        switchOutCurve: Curves.easeInOutCubic,
-                        transitionBuilder: (child, animation) {
-                          final curvedAnimation = CurvedAnimation(
-                            parent: animation,
-                            curve: Curves.easeOutCubic,
-                            reverseCurve: Curves.easeInCubic,
-                          );
-
-                          return FadeTransition(
-                            opacity: curvedAnimation,
-                            child: SlideTransition(
-                              position: Tween<Offset>(
-                                begin: const Offset(0.03, 0.0),
-                                end: Offset.zero,
-                              ).animate(curvedAnimation),
-                              child: child,
+                            )
+                          : Image(
+                              image: avatarImage,
+                              fit: BoxFit.cover,
+                              errorBuilder: (context, error, stackTrace) {
+                                return Container(
+                                  color: Colors.blueGrey[800],
+                                  alignment: Alignment.center,
+                                  child: const Icon(
+                                    Icons.person,
+                                    size: 72,
+                                    color: Colors.white54,
+                                  ),
+                                );
+                              },
                             ),
-                          );
-                        },
-                        child: currentView,
-                      ),
-                      const SizedBox(height: 30.0),
-                      // Pushes BottomGame to the bottom when content is shorter than screen
-                      const Spacer(),
-                      const SizedBox(
-                        height: 400.0,
-                        child: BottomGame(),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
+                  Positioned(
+                    top: -12,
+                    left: 16,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.redAccent,
+                        borderRadius: BorderRadius.circular(6),
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 2,
+                        ),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black54,
+                            offset: Offset(2, 2),
+                            blurRadius: 0,
+                          ),
+                        ],
+                      ),
+                      child: const Text(
+                        '@!*#JAK)@HEHE',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 1.2,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            );
-          },
+            ),
+            const SizedBox(height: 30.0),
+            Text(
+              "Hello There",
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleLarge?.apply(
+                    color: Colors.white,
+                  ),
+            ),
+            const SizedBox(height: 10.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50.0),
+              child: Text(
+                "I'm Hammad, any inquiries? email me through \n\nhammadsyr@gmail.com",
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyLarge?.apply(
+                      color: Colors.white,
+                    ),
+              ),
+            ),
+            const SizedBox(height: 50.0),
+            AnimatedSwitcher(
+              duration: const Duration(milliseconds: 450),
+              switchInCurve: Curves.easeOutCubic,
+              switchOutCurve: Curves.easeInOutCubic,
+              transitionBuilder: (child, animation) {
+                final curvedAnimation = CurvedAnimation(
+                  parent: animation,
+                  curve: Curves.easeOutCubic,
+                  reverseCurve: Curves.easeInCubic,
+                );
+
+                return FadeTransition(
+                  opacity: curvedAnimation,
+                  child: SlideTransition(
+                    position: Tween<Offset>(
+                      begin: const Offset(0.03, 0.0),
+                      end: Offset.zero,
+                    ).animate(curvedAnimation),
+                    child: child,
+                  ),
+                );
+              },
+              child: currentView,
+            ),
+            const SizedBox(height: 30.0),
+            const SizedBox(
+              height: 400.0,
+              child: BottomGame(),
+            ),
+          ],
         ),
-      ),
+      );
+    }
+
+    return Scaffold(
+      backgroundColor: Colors.blueGrey,
+      body: Center(child: waitingWidget),
     );
   }
 }
