@@ -254,7 +254,9 @@ class MainScreenState extends State<MainScreen> {
 
     late final Widget waitingWidget;
     if (portfolio == null && portfolioError == null) {
-      waitingWidget = CircularProgressIndicator(color: Colors.tealAccent);
+      waitingWidget = CircularProgressIndicator(
+        color: Colors.tealAccent,
+      );
     } else if (portfolioError != null) {
       waitingWidget = Text('Unable to load portfolio: $portfolioError',
           style: const TextStyle(color: Colors.redAccent));
