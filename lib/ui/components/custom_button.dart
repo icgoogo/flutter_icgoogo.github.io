@@ -17,7 +17,9 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final text = title.data ?? '';
-    bool isSamePage = text.contains("Projects") || text.contains("Home");
+    bool isSamePage = text.contains("Projects") ||
+        text.contains("Home") ||
+        text.contains("Resume");
 
     return Center(
       child: Container(

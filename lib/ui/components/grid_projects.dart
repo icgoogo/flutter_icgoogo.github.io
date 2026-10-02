@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:icgoogo/ui/components/projects_box.dart';
 import 'package:icgoogo/utils/screen_utils.dart';
 
-import '../../models/project_model.dart';
+import '../../models/portfolio_model.dart';
 
 class GridProjects extends StatelessWidget {
+  final List<Project> projects;
   final void Function(Project project)? onProjectTap;
 
   const GridProjects({
     super.key,
+    this.projects = defaultProjects,
     this.onProjectTap,
   });
 
@@ -45,8 +47,8 @@ class GridProjects extends StatelessWidget {
             final project = projects[index];
             return ProjectsBox(
               title: project.title,
-              tapLink: project.tapLink,
-              gifPath: project.prevPath,
+              tapLink: project.link,
+              gifPath: project.previewUrl(),
               onTap: onProjectTap != null ? () => onProjectTap!(project) : null,
             );
           },

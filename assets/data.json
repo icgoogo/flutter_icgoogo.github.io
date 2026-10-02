@@ -1,0 +1,117 @@
+{
+  "status": "success",
+  "data": {
+    "list_projects": [
+      {
+        "id": 1,
+        "name": "Ceria by BRI",
+        "prev_id": "https://lh3.googleusercontent.com/d/1bllM-BB74_bZN6XsCpZ2XAZwLMHJ1BXW",
+        "link": "",
+        "md": "### Main Responsibility\n\nContributed to the engineering and maintenance of BRI Ceria, a digital lending platform serving **1M+ users**. My primary responsibility was mobile application development, while I also supported several services integrating data from core banking and middleware systems and built automated pipelines to accelerate software delivery. More info: [Ceria by BRI](https://bri.co.id/en/ceria2)\n\n#### Key Contributions\n\n- **App Stability**: Increased crash-free user sessions from 88% to over 99.5% through aggressive state management refactoring, memory leak resolution, and proactive error handling.\n- **Footprint Optimization**: Reduced the total application package size by 50% (from ~100 MB to ~50 MB), lowering user drop-off rates during installation.\n- **Fraud Mitigation**: Redesigned the end-to-end digital lending onboarding flow and designed a behavioral fraud detection system using historical customer data.\n- **Security & Compliance**: Hardened application security following OWASP MASVS standards post-penetration testing, implementing custom SSL pinning and cryptographic handshake mechanisms between client apps and API gateways.\n- **Integration Pipelines**: Built and maintained CI/CD pipelines with Jenkins for deployments of front app and microservices integrating middleware with core banking infrastructure.\n\n#### Tools Used\n\nVim, Flutter, Java, Kotlin, Swift, Go, JS, TS, Burp Suite, Frida, JADX, ADB, Certificate Maintenance (ex: SSL Pinning, APNs, etc), Playstore, AppStore, Docker, Jenkins, SSH, SonarQube, JIRA, Confluence, Figma, etc"
+      },
+      {
+        "id": 2,
+        "name": "Kernel-Level Connection Tracking with eBPF in C",
+        "prev_id": "",
+        "link": "https://github.com/icgoogo/ebpf_tcp_tracker",
+        "md": ""
+      },
+      {
+        "id": 3,
+        "name": "Throughput Prediction for 5G High Density Network",
+        "prev_id": "",
+        "link": "https://github.com/icgoogo/throughput_prediction_for_5G_high_density_network",
+        "md": ""
+      },
+      {
+        "id": 4,
+        "name": "CTF Challenges",
+        "prev_id": "",
+        "link": "",
+        "md": "# CTF\n\n[![Cybersecurity](https://img.shields.io/badge/Focus-Offensive%20%26%20Defensive%20Security-6f42c1)](#)\n[![Binary Exploitation](https://img.shields.io/badge/Domain-Binary%20Exploitation-c0392b)](#binary-exploitation--memory-safety)\n[![Reverse Engineering](https://img.shields.io/badge/Domain-Reverse%20Engineering-16a085)](#reverse-engineering--symbolic-execution)\n[![Web Security](https://img.shields.io/badge/Domain-Web%20Security-2980b9)](#web-application-security)\n\n## Technical Focus & Acquired Skills\n\nSeveral challenges solved is available here: [Github Repo](https://github.com/icgoogo/ctf_writeups)\n\n### Binary Exploitation\n\n- **Return-Oriented Programming (ROP):** Gadget identification, stack pivot techniques, register control, ret2libc-style chains, and constructing payloads under strict character or space constraints.\n- **Heap Exploitation:** Allocator state manipulation (glibc malloc), fastbin duplication, chunk corruption, arbitrary read/write primitives, libc address leaks, and targeting function hooks (`__malloc_hook`).\n- **Mitigation Bypasses:** Circumventing stack canaries, PIE rebasing, ASLR, NX/DEP, and pointer protection mechanisms via runtime information disclosures.\n- **Kernel Exploitation:** Device driver interaction via `ioctl`, kernel control-flow redirection, credentials/privilege escalation primitives, and handling kernel-level race conditions.\n- **Shellcoding:** Writing direct x86/x86-64 syscalls, constrained/alphanumeric payloads, multistage execution, and memory layout mapping (`open-read-write`, `open-mmap-write`).\n\n### Reverse Engineering & Symbolic Execution\n\n- **Binary Disassembly & Decompilation:** Reconstructing program logic, extracting algorithms/cryptographic constants, and analyzing packed binaries.\n- **Symbolic Execution & SMT Solving:** Automating path exploration, constraint solving, and flag/key recovery using `angr` and `Z3`.\n- **Dynamic Analysis & Debugging:** Native runtime inspection, memory tracing, anti-debugging analysis, and validating static analysis hypotheses against live process behavior.\n\n### Web & Network Security\n\n- **Web Application Testing:** Request/response manipulation, session state and cookie security analysis, authentication/authorization flaw identification, and CSP analysis.\n- **Vulnerability Analysis:** Practical exploitation of SQL Injection, Cross-Site Scripting (XSS), client-side DOM vulnerabilities, and server-side request processing edge cases.\n- **Network Reconnaissance:** Port and service enumeration with Nmap, attack-surface mapping, public vulnerability assessment, and controlled exploit validation against lab environments.\n\n---\n\n## Tools\n\n- **Binary Exploitation:** Pwntools, GDB (GEF/Pwndbg), C, x86/x86-64 Assembly, Linux Kernel/Syscalls\n- **Reverse Engineering:** Ghidra, IDA Free, `libdebug`, `objdump`, `strings`, `file`\n- **Symbolic Execution:** `angr`, Z3 SMT Solver\n- **Web Security:** Burp Suite, Browser DevTools, `curl`, Python\n- **Network & Assessment:** Nmap, Metasploit/Public Exploit Validation, Netcat\n- **Scripting & Automation:** Python 3, Bash, C |\n\n---\n\n#### Mostly Part of Applied coursework in Offensive & Defensive Cybersecurity and Computer Security at Politecnico di Milano"
+      },
+      {
+        "id": 5,
+        "name": "Programmable Data Plane with P4 and eBPF Lab",
+        "prev_id": "",
+        "link": "https://github.com/icgoogo/058172-network-computing-labs",
+        "md": ""
+      },
+      {
+        "id": 6,
+        "name": "Linux Kernel Module Development",
+        "prev_id": "",
+        "link": "https://github.com/icgoogo/course-labs-2526",
+        "md": ""
+      },
+      {
+        "id": 7,
+        "name": "Network Data Analysis Notebook",
+        "prev_id": "",
+        "link": "",
+        "md": "### Optical Lightpath QoT Estimation & ML Pipeline\n\nA 3-stage Python data processing and machine learning pipeline for predicting Quality of Transmission (**Signal-to-Noise Ratio in dB**) across optical network lightpaths.\n\n#### Highlights\n\n- **Task 1 (Data Ingestion & Feature Engineering)**: Built custom I/O logic to parse dynamic fiber span logs from 1,034 lightpath records into a structured feature matrix $X \\in \\mathbb{R}^{1034 \\times 5}$ (span counts, total distance, max span length, interferer count, and spectral proximity $\\Delta f$).\n- **Task 2 (Statistical Analysis & EDA)**: Computed univariate statistics (NumPy) and multi-panel scatter visualizations (Matplotlib) to profile physical-layer degradation and non-linear cross-phase modulation trends.\n- **Task 3 (ML Modeling & Evaluation)**: Preprocessed features using `StandardScaler` and trained Multi-Layer Perceptrons (`MLPRegressor`) alongside linear baselines to model target SNR, evaluating via learning curves, MSE, and max error metrics.\n\n**Tech Stack:** Python 3, NumPy, scikit-learn, Matplotlib\n\n👉 **[View Full Repository & Source Code](https://github.com/icgoogo/network_data_analysis_lab)**"
+      },
+      {
+        "id": 8,
+        "name": "Network Measurment Notebook",
+        "prev_id": "",
+        "link": "",
+        "md": "### Encrypted Network Traffic Analysis & Fingerprinting Pipeline\n\nAn end-to-end network data collection and processing pipeline that captures live HTTPS traffic, parses raw `.pcap` packet streams, and engineers statistical feature sets for encrypted website fingerprinting and side-channel traffic analysis.\n\n- **Automated Packet Sniffing:** Automated live traffic capture via `tcpdump` using Berkeley Packet Filters (`port 443`, `port 53`) and systematic local DNS flushing (`dscacheutil`/`mDNSResponder`) to prevent routing artifacts.\n- **PCAP Parsing Engine:** Built headless `tshark` extraction scripts to convert binary packet captures into structured CSVs, tracking directional flows (uplink/downlink) across dynamic IP environments.\n- **Side-Channel Feature Engineering:** Derived a 20-feature statistical dataset covering packet size distributions and Inter-Arrival Times (IAT) to enable passive traffic classification without packet decryption.\n\n**Tech Stack:** `Python` • `Pandas` • `NumPy` • `tcpdump` • `tshark` • `Bash` • `Wireshark`\n\n👉 **[Explore the Repository on GitHub](https://github.com/icgoogo/network_measurement_lab/tree/main)**"
+      },
+      {
+        "id": 9,
+        "name": "Histopathology Classifier with Mask using Transfer Learning",
+        "prev_id": "https://lh3.googleusercontent.com/d/11Bcj9XcBNu7bUqPpwfsAI4nMwWzGU505",
+        "link": "",
+        "md": "# Pipeline Highlights\n\n- **Data Cleaning:** Removed 110 contaminated images using HSV space filtering, leaving 581 clean training images.\n\n- **Dense Tiling:** Extracted tissue regions into a $5 \\times 5$ grid of $32 \\times 32$ tiles to remove uninformative background.\n\n### Performance Overview\n\n**Test Accuracy:**\n\n1.  **Custom CNN**: 23.72%\n2.  **EfficientNet-B3**: 34.69%\n3.  **ResNet-50**: 36.40%\n4.  **ResNet-18**:**39.26%**\n\n---\n\n📄 For the complete detailed groups, detailed methodology, mathematical equations, diagnostic plots, failed experiment logs, and full hyperparameter setups, refer directly to `ANN2DL_Convoggle_Challenge2_Report.pdf` on Repo: [Github Repo](https://github.com/icgoogo/image_classifier_with_mask)."
+      },
+      {
+        "id": 10,
+        "name": "Pain Level Classifier with Temporal Data",
+        "prev_id": "https://lh3.googleusercontent.com/d/1ASKSLy2vLsofTkBFKrCd1ScTdRNb-_Rx",
+        "link": "",
+        "md": "# **Pirate Pain Challenge – Time Series Classification Project Summary**\n\n## Project Overview\n\nThis project focuses on time series classification for the AN2DL 2025–2026 challenge, analyzing temporal physiological metrics and multi-joint sensor data to classify pain levels into three categories: `no_pain`, `low_pain`, and `high_pain`.\n\nGithub Repo: [Pirate Pain Classifier](https://github.com/icgoogo/pirate_pain_classifier)\n\n## Data Insights\n\n- **Data Ingestion & Alignment Verification**: Successfully loaded and verified index alignment across training, testing, and ground-truth label files using `sample_index` key validation.\n- **Dataset Scale & Zero-Null Data Hygiene**: Processed a training dataset of 105,760 time-series rows across 40 features and a test dataset of 211,840 rows, confirming 0 missing/null values across both sets.\n- **Class Imbalance Analytics**: Quantified class distribution across the 661 sample series to guide loss weighting and model evaluation strategies:\n  - `no_pain`: 77.31%\n  - `low_pain`: 14.22%\n  - `high_pain`: 8.47%\n\n- **Exploratory Visualization**: Built Seaborn bar plots with relative frequency callouts to visualize class distribution and mapped feature schemas spanning survey scores (`pain_survey_1`–`4`), anatomical counters (`n_legs`, `n_hands`, `n_eyes`), and 31 joint movement channels (`joint_00`–`joint_30`).\n\n## Tools\n\n- PyTorch (torch, torch.nn, torch.optim).\n- Pandas, NumPy, and SciPy.\n- Scikit-Learn (sklearn) used for Stratified K-Fold cross-validation, feature scaling, label encoding, and classification performance metrics.\n- Seaborn and Matplotlib used for custom Seaborn whitegrid themes, distribution bar plots, and figure formatting."
+      },
+      {
+        "id": 11,
+        "name": "Cocorolife Indonesia",
+        "prev_id": "https://lh3.googleusercontent.com/d/13ZhgK6sfqAzBu00bepsyO1imQyQ7c3jr",
+        "link": "https://play.google.com/store/apps/details?id=id.cocorolife",
+        "md": ""
+      },
+      {
+        "id": 12,
+        "name": "Clicker Game",
+        "prev_id": "https://lh3.googleusercontent.com/d/15oVcumjXbEAunW0wM4p8ZB0ORKwecTRo",
+        "link": "https://flutter-pfft.netlify.app/",
+        "md": ""
+      },
+      {
+        "id": 13,
+        "name": "Pokedex NextJS",
+        "prev_id": "https://lh3.googleusercontent.com/d/1nCGaIAit3twLlry_AOAGNlrZfaeHAltx",
+        "link": "https://pokedex-nextjs-icgoogo.vercel.app",
+        "md": ""
+      }
+    ],
+    "additional_data": [
+      {
+        "cv": "# Hammad Syarif\n\nhammadsyr@gmail.com | [linkedin.com/in/hammad-syarif](https:linkedin.com/in/hammad-syarif)| [icgoogo.github.io](https://icgoogo.github.io) | Milan, Italy\n\n---\n\n## Overview\n\nMSc Computer Science student at Politecnico di Milano specializing in Application Security and Infrastructure, backed by 4+ years of professional software engineering experience in digital financial services.\n\nI bridge software engineering with security, combining experience in building scalable application systems and data platforms. My technical focus spans Software Engineering (Flutter, Android, iOS, Backend App), networking (eBPF/XDP kernel extensions, QoT estimation), reverse engineering, AI in networking, and cryptography.\n\nProven track record in team management ranging from leading engineering teams at Bank BRI to serving as Chief Coordinator for field expeditions (KKN UGM Ternate) and campus organizations.\n\n**Explore my work:** https://icgoogo.github.io\n\n---\n\n## TECHNICAL SKILLS\n\n- **Languages:** Dart, Java, Kotlin, Swift, Go, C/C++, Python, SQL\n- **Frameworks & Platforms:** Flutter, Android SDK, ReactJS, eBPF/XDP, Node.js, BLoC/Provider\n- **Tools & Infrastructure:** Linux, Docker, Kubernetes, CI/CD (Jenkins, Fastlane), Firebase, Sentry, Playstore, AppStore\n\n---\n\n## EXPERIENCE\n\n### PT Bank Rakyat Indonesia (Persero) Tbk\n\n**Software Engineer** | _Jakarta, Indonesia_ | _Jun 2021 – Aug 2024_\n\n_Tech Stack: Flutter, ReactJS, Go, Node.js, PostgreSQL, MongoDB, Redis, Jenkins_\n\nContributed to the engineering and maintenance of BRI Ceria, a digital lending platform serving 1M+ users. My primary responsibility was cross-platform mobile application development using Flutter, while I also supported several services integrating data from core banking and middleware systems and built automated pipelines to accelerate software delivery.\n\n- **Modular App Architecture:** Refactored the core Flutter codebase into domain-driven feature modules (Auth, Loan Application, Payments). Enabling isolated module testing and accelerating multi-developer feature delivery.\n- **UI Component Library:** Built atomic UI component library, reducing redundant code and ensuring consistency across all app screens.\n- **App Stability:** Increased crash-free user sessions from 88% to over 99.5% through aggressive state management refactoring, memory leak resolution, and proactive error handling.\n- **Footprint Optimization:** Reduced the total application package size from ~100 MB to ~50 MB, lowering user drop-off rates during installation.\n- **Core Banking & Middleware Services:** Developed event-driven microservices in Go (such as using Apache Kafka for real-time transaction processing) while maintaining a Node.js/Express backend layer to decouple front-end APIs from internal bank infrastructure.\n- **Security & Compliance:** Hardened application security following OWASP standards post-penetration testing. Implementing custom SSL pinning and cryptographic handshake mechanisms between client apps and API gateways.\n- **Integration Pipelines:** Built and maintained CI/CD pipelines with Jenkins/Fastlane for deployments of front app and microservices.\n- **Fraud Mitigation:** Redesigned the end-to-end digital loan application flow and designed a behavioral fraud detection system using historical customer data.\n- **For more details, visit Ceria by BRI:** https://bri.co.id/en/ceria2\n\n**BFLP IT Trainee Batch 1** | _Jakarta, Indonesia_ | _Aug 2020 – Jun 2021_\n\n- Worked as an IT trainee learning fundamental operations and the growth of the banking industry in the digital era.\n\n---\n\n### ZAPPS\n\n**Lead Android Developer** | _Jakarta, Indonesia (Remote)_ | _Mar 2021 – Aug 2021_\n\n_Tech Stack: Koin/Hilt, Kotlin Coroutines, Android Lifecycle, Android Studio Profiler, Leak Canary_\n\n- Supervised the entire SDLC, from resource gathering to deployment for the Cocorolife e-commerce app (PT Sharp Trading Indonesia).\n- Implemented clean architecture boilerplate and applied the MVVM design pattern.\n- Integrated OpenStreetMap API for location services and Finpay payment gateway for transactions.\n- Utilized Gitlab CI/CD for integration/deployment and managed iOS/Android app store accounts.\n\n---\n\n### Tekno Sejahtera Business Solution\n\n**Lead Android Developer** | _Semarang, Indonesia_ | _Apr 2019 – Jul 2019_\n\n- Contracted to develop an app for PT Adhi Karya called Toeline, connecting users and merchant vendors.\n- Applied clean architecture and MVVM design pattern while developing two distinct applications for public users and merchants.\n\n---\n\n### Universitas Gadjah Mada\n\n**Assistant Lecturer in Engineering Physics Course** | _Yogyakarta, Indonesia_ | _Jan 2019 – Jun 2019_\n\nAs an Assistant Lecturer in the Engineering Physics course, I provided additional classes for students needing extra support. My teachings covered key topics such as unit systems, laws of movement across various dimensions, Newton's Laws in statics and dynamics, circular motion, work, energy, power, linear and angular momentum, wave and sound principles. My role focused on enhancing student understanding of these complex subjects\n\n---\n\n### PT Gamatechno Indonesia\n\n**Android Developer Intern** | _Yogyakarta, Indonesia_ | _Dec 2018 – Mar 2019_\n\nCompleted a three-month internship focused on enhancing the Nusacare health monitoring Android app:\n\n- Enhanced the Nusacare health monitoring Android app using Java, implementing the MVP design pattern.\n- Designed an adaptive UI and conducted debugging/profiling to improve app stability and reliability.\n\n---\n\n## EDUCATION\n\n### Politecnico di Milano\n\n**MSc Computer Science and Engineering** | _Milan, Italy_ | _Sep 2024 – Current_\n\n- **Current Thesis:** Secure Middlebox Architecture for Private 5G Infrastructure\n- **Relevant Coursework including:** Network Security & Cryptography, Advanced Operating Systems, Offensive and Defensive Cybersecurity, Network Computing, Computer Security, Artificial Neural Network and Deep Learning, Digital Forensics and Cybercrime, Software Engineering, Computing Infrastructures.\n- **Focus Areas:** Binary Exploitation, Kernel Dev and Security, Reverse Engineering, eBPF and P4, Web Exploitation, Fuzzing, Cryptographic Protocols, Traffic Inspection & Telemetry, Quality of Transmission (QoT) Estimation, Network Resource Allocation\n\n---\n\n### Universitas Gadjah Mada\n\n**BEng Information Technology** | _Yogyakarta, Indonesia_ | _Aug 2016 – Aug 2020_\n\nGraduated with a 3.21/4 GPA in Computer Science. Completed courses including: **Discrete Mathematics**, **Object Oriented Programming**, **Algorithms and Data Structures**, **Database Engineering**, **Operating System**, **Computer Network**, **Web Application Development**, and **Software Architecture**.\n\n---\n\n## CERTIFICATIONS\n\n### IELTS (Academic) — Overall Band 7.0\n\n**IELTS Official** | _Issued Nov 2023_\n\n### Kotlin Android Developer Expert\n\n**Dicoding Indonesia** | _Issued Feb 2019_\n\n### Android Jetpack Pro\n\n**Dicoding Indonesia** | _Issued Jul 2020_ | Credential ID: `JMZVM1MNNZN9` | [Link to Certificate](https://www.dicoding.com/certificates/JMZVM1MNNZN9)\n\n---\n\n## HONORS & AWARDS\n\n#### **BRI Hackathon 2020 Winner** | _Universitas Gadjah Mada (UGM)_ | _Feb 2020_\n\nDeveloped an innovative prototype repurposing keyboards into versatile tools for SMEs to manage shipments and receive payments.\n\n#### **Jenius Hackathon Finalist (Top 20)** | _Universitas Gadjah Mada (UGM)_ | _Jan 2020_\n\nEngineered an automatic data extraction feature for chat texts to streamline UI/UX for Jenius service transactions.\n\n---\n\n## PROJECTS\n\n### Kernel-Level Connection Tracking with eBPF in C\n\n_eBPF, XDP, C, Linux_\n\n- **Kernel Data Path Processing:** Engineered an in-kernel stateful connection tracker in C using eBPF/XDP to intercept and parse IPv4 TCP/UDP packets directly at the network driver layer prior to Linux network stack processing.\n- **Stateful Flow Tracking:** Normalized bidirectional packet flows into BPF hash maps, validating 5-tuple connection lifecycles (SYN, ESTABLISHED, FIN/RST) and maintaining zero-copy lookup tables.\n- **Emulation & Benchmarking:** Evaluated processing throughput, latency overhead, and redirection policies across custom virtualized network topologies using Mininet.\n- [Link to Github Repository](https://github.com/icgoogo/ebpf_tcp_tracker)\n\n---\n\n### Throughput Prediction for 5G High Density Network\n\n_Machine Learning, VFL_\n\n- **Privacy-Preserving ML Architecture:** Engineered a simulated Vertical Federated Learning (VFL) framework to predict user-level throughput in dense 5G environments across feature-partitioned network entities without exposing raw telemetry.\n- **Predictive Modeling:** Implemented and evaluated LSTM time-series neural networks against Random Forest baselines in PyTorch, capturing temporal radio channel dynamics under heavy user-density conditions.\n- **Data Pipeline & Feature Alignment:** Processed and aligned multi-entity 5G network telemetry datasets, handling feature fragmentation and non-IID distributions between User Equipment (UE) and Radio Units (RU).\n- [Link to Github Repository](https://github.com/icgoogo/throughput_prediction_for_5G_high_density_network)\n\n---\n\n### CTF Security Challenges & Vulnerability Exploitation\n\n_C/C++, Python, angr, Z3, GDB, Nmap, Linux_\n\n- **Binary & Kernel Exploitation:** Constructed ROP chains, manipulated glibc heap state, bypassed ASLR/PIE/Canaries, and leveraged kernel driver race conditions for privilege escalation.\n- **Reverse Engineering & Analysis:** Reconstructed program logic via disassembly/decompilation, analyzed packed binaries, and automated constraint solving for flag extraction using angr and Z3.\n- **Web & Network Security:** Exploited web application vulnerabilities (SQLi, XSS, auth bypasses) and conducted network reconnaissance and vulnerability validation using Nmap.\n- [Link to Github Repository](https://github.com/icgoogo/ctf_writeups)\n\n---\n\n## LANGUAGE SKILLS\n\n- **English:** C1\n- **Italian:** A2\n- **Arabic:** B1\n- **Indonesian:** Native\n\n---\n\n<!-- <sub>_I hereby authorize the processing of my personal data contained in my CV for recruitment purposes in accordance with Article 6(1)(a) of Regulation (EU) 2016/679 (GDPR)._</sub> -->\n",
+        "main_preview_url": "https://lh3.googleusercontent.com/d/1W34_xJTSwPZFD-zZFQCaoNfk_qyrTgQR"
+      }
+    ],
+    "main_tab": [
+      { "tab": "Resume", "link": "" },
+      { "tab": "Projects", "link": "" },
+      {
+        "tab": "Linkedin",
+        "link": "https://www.linkedin.com/in/hammad-syarif/"
+      },
+      { "tab": "Github", "link": "https://github.com/icgoogo" },
+      {
+        "tab": "Stack Overflow",
+        "link": "https://stackoverflow.com/users/10898364/hammadsyr"
+      }
+    ]
+  }
+}

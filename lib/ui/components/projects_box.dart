@@ -60,21 +60,23 @@ class ProjectsBox extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: gifPath != null
-                              ? Image.asset(
-                                  gifPath!,
-                                  fit: BoxFit.contain,
-                                  width: double.infinity,
-                                  errorBuilder: (context, error, stackTrace) {
-                                    return Container(
-                                      color: Colors.black12,
-                                      child: const Icon(
-                                        Icons.code,
-                                        size: 48,
-                                        color: Colors.white54,
-                                      ),
-                                    );
-                                  },
-                                )
+                              ? (gifPath!.startsWith('http')
+                                  ? Image.network(
+                                      gifPath!,
+                                      fit: BoxFit.contain,
+                                      width: double.infinity,
+                                      errorBuilder:
+                                          (context, error, stackTrace) =>
+                                              _emptyPreview(),
+                                    )
+                                  : Image.asset(
+                                      gifPath!,
+                                      fit: BoxFit.contain,
+                                      width: double.infinity,
+                                      errorBuilder:
+                                          (context, error, stackTrace) =>
+                                              _emptyPreview(),
+                                    ))
                               : Center(
                                   child: Text(
                                     title,
@@ -126,6 +128,13 @@ class ProjectsBox extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _emptyPreview() {
+    return Container(
+      color: Colors.black12,
+      child: const Icon(Icons.code, size: 48, color: Colors.white54),
     );
   }
 }

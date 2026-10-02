@@ -14,9 +14,27 @@ class BottomGame extends StatefulWidget {
 }
 
 class BottomGameState extends State<BottomGame> {
+  final FocusNode _focusNode = FocusNode();
+  Timer? _jumpTimer;
+
   double playerX = 0;
   double playerY = 1;
   bool isDownward = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) _focusNode.requestFocus();
+    });
+  }
+
+  @override
+  void dispose() {
+    _jumpTimer?.cancel();
+    _focusNode.dispose();
+    super.dispose();
+  }
 
   void moveLeft() {
     setState(() {
@@ -37,7 +55,14 @@ class BottomGameState extends State<BottomGame> {
   }
 
   void jump() {
-    Timer.periodic(Duration(milliseconds: 10), (timer) {
+    if (_jumpTimer?.isActive ?? false) return;
+
+    _jumpTimer = Timer.periodic(const Duration(milliseconds: 10), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
+
       setState(() {
         if (playerY - 0.05 < 0) {
           isDownward = true;
@@ -58,25 +83,26 @@ class BottomGameState extends State<BottomGame> {
     });
   }
 
+  void _handleKeyEvent(KeyEvent event) {
+    if (event is KeyUpEvent) return;
+
+    if (event.logicalKey == LogicalKeyboardKey.arrowLeft) {
+      moveLeft();
+    } else if (event.logicalKey == LogicalKeyboardKey.arrowRight) {
+      moveRight();
+    } else if (event is KeyDownEvent &&
+        (event.logicalKey == LogicalKeyboardKey.space ||
+            event.logicalKey == LogicalKeyboardKey.arrowUp)) {
+      jump();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return KeyboardListener(
-      focusNode: FocusNode(),
+      focusNode: _focusNode,
       autofocus: true,
-      onKeyEvent: (event) {
-        if (HardwareKeyboard.instance
-            .isLogicalKeyPressed(LogicalKeyboardKey.arrowLeft)) {
-          moveLeft();
-        } else if (HardwareKeyboard.instance
-            .isLogicalKeyPressed(LogicalKeyboardKey.arrowRight)) {
-          moveRight();
-        } else if (HardwareKeyboard.instance
-                .isLogicalKeyPressed(LogicalKeyboardKey.space) ||
-            HardwareKeyboard.instance
-                .isLogicalKeyPressed(LogicalKeyboardKey.arrowUp)) {
-          jump();
-        }
-      },
+      onKeyEvent: _handleKeyEvent,
       child: Column(
         children: [
           Expanded(

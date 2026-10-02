@@ -34,6 +34,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.3.0
   url_launcher: ^6.1.5
+  http: ^1.6.0
 
   flutter_markdown_plus: any
 dev_dependencies:
@@ -47,10 +48,10 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
+  # For information on the generic Dart part of this file, see the
+  # following page: https://dart.dev/tools/pub/pubspec
 
-# The following section is specific to Flutter packages.
+  # The following section is specific to Flutter packages.
   url_launcher_platform_interface: any
 flutter:
   # The following line ensures that the Material Icons font is
@@ -60,9 +61,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/data.json
     - assets/images/
     - assets/videos/
-    - assets/md/
+    # - assets/md/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
